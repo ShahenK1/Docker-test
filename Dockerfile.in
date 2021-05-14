@@ -1,0 +1,13 @@
+FROM alpine
+
+RUN apk add git \
+	&& apk add yarn \
+	&& git clone https://github.com/ShahenK1/Docker-test.git \
+	&& cd Docker-test \
+	&& yarn
+
+WORKDIR ./Docker-test
+
+CMD yarn start
+
+EXPOSE 3000
